@@ -1,19 +1,11 @@
 # bivpoisson
 Count Valued Seemingly Unrelated Regression 
-# Project Title
-
-bivpoisson
 
 ## Description
 
 Stata module to estimate bivariate poisson regressions
 
 ## Getting Started
-
-### Dependencies
-
-* Describe any prerequisites, libraries, OS version, etc., needed before installing program.
-* ex. Windows 10
 
 ### Installing
 
@@ -27,14 +19,13 @@ bivpoisson is a user-written command that fits a count valued seemingly unrelate
 
 ### Syntax
 
-* How to run the program
-* Step-by-step bullets
 ```
 bivpoisson depvar1 [=] [indepvars1] [if] [in] [weight], equation2(depvar2 [=] [indepvars2] [, enopts])  [options]
 ```
 where depvar1 is the first count valued outcome variable, indepvars1 are the independent variables of the firs outcome equation, depvar2 is the second count valued outcome variable, and indepvars2 are the independent variables of the second equation. Independent variables may contain a binary policy variable and a set of control variables and may be different or the same. bivpoisson is limited to a count valued seemingly unrelated regression model with two equations and provides a postestimation commands in estimating the average treatment effects (ATEs).
 
 ### Options 
+
 options                       Description
 -----------------------------------------------------------------------------------------------------------
 Model
@@ -60,6 +51,7 @@ Model
   noconstant                  suppress constant term
   offset(varname)             offset variable for second equation
 -----------------------------------------------------------------------------------------------------------
+
 
 ### Example
 
@@ -153,8 +145,11 @@ command to run if program contains helper info
 
 ## Authors
 
-ex. Abbie Zhang 
-ex. yz97@iu.edu
+Abbie Zhang 
+yz97@iu.edu
+
+Joseph V. Terza
+jvterza@iupui.edu
 
 ## Version History
 
