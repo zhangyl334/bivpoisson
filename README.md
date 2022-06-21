@@ -2,11 +2,11 @@
 Count Valued Seemingly Unrelated Regression 
 # Project Title
 
-Simple overview of use/purpose.
+bivpoisson
 
 ## Description
 
-An in-depth paragraph about your project and overview of use.
+Stata module to estimate bivariate poisson regressions
 
 ## Getting Started
 
@@ -17,8 +17,13 @@ An in-depth paragraph about your project and overview of use.
 
 ### Installing
 
-* How/where to download your program
-* Any modifications needed to be made to files/folders
+The latest version can be obtained via
+
+ssc install bivpoisson
+
+### Model Estimation
+bivpoisson is a user-written command that fits a count valued seemingly unrelated regression using maximum likelihood estimation. It is implemented as an lf0 ml evaluator. The model involves two equations: first equation with the first dependent variable (depvar1) and a second equation with the second (correleated) dependent variable (depvar2). Both dependent variables depvar1 and depvar2 have to be count valued variables. Users are free to chose the same or different set of indepedent variabes in the two equations.
+
 
 ### Executing program
 
@@ -37,22 +42,17 @@ command to run if program contains helper info
 
 ## Authors
 
-Contributors names and contact info
-
-ex. Dominique Pizzie  
-ex. [@DomPizzie](https://twitter.com/dompizzie)
+ex. Abbie Zhang 
+ex. yz97@iu.edu
 
 ## Version History
 
-* 0.2
-    * Various bug fixes and optimizations
-    * See [commit change]() or See [release history]()
 * 0.1
     * Initial Release
 
 ## License
 
-This project is licensed under the [NAME HERE] License - see the LICENSE.md file for details
+This project is licensed under the MIT License - see the LICENSE.md file for details
 
 ## Acknowledgments
 
