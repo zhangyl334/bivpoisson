@@ -26,6 +26,7 @@ where depvar1 is the first count valued outcome variable, indepvars1 are the ind
 
 ### Options 
 
+```
 options                       Description
 -----------------------------------------------------------------------------------------------------------
 Model
@@ -51,7 +52,7 @@ Model
   noconstant                  suppress constant term
   offset(varname)             offset variable for second equation
 -----------------------------------------------------------------------------------------------------------
-
+```
 
 ### Example
 
