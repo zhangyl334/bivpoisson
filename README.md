@@ -35,13 +35,6 @@ Model
   noconstant                  suppress constant term
   offset(varname)             offset variable for first equation
 
-SE/Robust
-  vce(vcetype)                vcetype may be oim, robust, cluster clustvar, opg, bootstrap, or jackknife
-
-Reporting
-  level(#)                    set confidence level; default is level(95)
-  lrmodel                     perform likelihood-ratio model test instead of the default Wald test
-
 Maximization
   maximize_options            control the maximization process; seldom used
 
