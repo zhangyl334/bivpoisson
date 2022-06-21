@@ -1,0 +1,30 @@
+# Example Data Description
+
+## Data Source
+Medical-care demand by the elderly using a sample from the 1987 National Medical Expenditure Survey
+
+This data has been used by many other works including:
+Chib, S., & Winkelmann, R. (2001). Markov Chain Monte Carlo Analysis of Correlated Count Data. Journal of Business & Economic Statistics, 19(4), 428–435. https://doi.org/10.1198/07350010152596673
+Deb, P., & Trivedi, P. (1997). Demand for medical care by the elderly: A finite mixture approach. Journal of Applied Econometrics, 12(3), 313–336. https://doi.org/10.1002/(SICI)1099-1255(199705)12:3<313::AID-JAE440>3.0.CO;2-G
+
+
+## Description
+
+The 1987 National Australian Medical Expenditure Survey Data reports several types of correlated count, medical utilization data – e.g., number of physician office visits, number of non-physician office visits, number of emergency room visits, etc. – and additional covariates – e.g., private insurance, geography, and so on – for elderly Australians over the age of 65.  Table 5 provides detailed summary statistics.
+We use a subset of the variables as part of the present exercise.
+
+Our two count correlated outcomes are:
+(i) the number of physician office visits (variable name: ofp)
+(ii) the number of non-physician office visits, (variable name: ofnp)
+
+Covariates consist of a constant and all patient characteristics. 
+The variable names are: exclhlth poorhlth numchron adldiff noreast midwest west age black male married school faminc employed medicaid
+They represents: whether has excellent health, whether has poor health, number of chronic conditions, whether has daily activity difficulties, region indicator (northeast), region indicator (midwest), region indicator (west), age, black, male, whether is married, years of school attended, family income, employement status, Australia Medicaid Status
+
+Policy variable is an indicator variable (variable name: privins) of a whether a patient has private health insurance.
+
+In using package bivpoison, We assume that the policy variable is exogenous to the other covariates and the outcomes; 
+This assumption allows us to focus on the comparison of the methods without the complication of developing a control strategy for endogeneity (e.g., instrumental variables). 
+One of the goals of future work is to fully incorporate 2SRI approaches for handling endogenous policy variables.
+
+
