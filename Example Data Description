@@ -3,15 +3,18 @@
 ## Data Source
 Medical-care demand by the elderly using a sample from the 1987 National Medical Expenditure Survey
 
+## Dataset Name
+DemandforMedicalCare_NMES.dta
+
+## Applications
 This data has been used by many other works including:
 Chib, S., & Winkelmann, R. (2001). Markov Chain Monte Carlo Analysis of Correlated Count Data. Journal of Business & Economic Statistics, 19(4), 428–435. https://doi.org/10.1198/07350010152596673
 Deb, P., & Trivedi, P. (1997). Demand for medical care by the elderly: A finite mixture approach. Journal of Applied Econometrics, 12(3), 313–336. https://doi.org/10.1002/(SICI)1099-1255(199705)12:3<313::AID-JAE440>3.0.CO;2-G
 
-
 ## Description
 
 The 1987 National Australian Medical Expenditure Survey Data reports several types of correlated count, medical utilization data – e.g., number of physician office visits, number of non-physician office visits, number of emergency room visits, etc. – and additional covariates – e.g., private insurance, geography, and so on – for elderly Australians over the age of 65.  Table 5 provides detailed summary statistics.
-We use a subset of the variables as part of the present exercise.
+We use a subset of the variables as part of the present exercise. The data sample size is 4,406.
 
 Our two count correlated outcomes are:
 (i) the number of physician office visits (variable name: ofp)
