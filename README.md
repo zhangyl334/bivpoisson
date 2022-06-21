@@ -11,7 +11,9 @@ Stata module to estimate bivariate poisson regressions
 
 The latest version can be obtained via
 
+```
 ssc install bivpoisson
+```
 
 ### Model Estimation
 bivpoisson is a user-written command that fits a count valued seemingly unrelated regression using maximum likelihood estimation. It is implemented as an lf0 ml evaluator. The model involves two equations: first equation with the first dependent variable (depvar1) and a second equation with the second dependent variable (depvar2). depvar2 and depvar1 are correlated. Both dependent variables depvar1 and depvar2 have to be count valued variables. Users are free to chose the same or different set of indepedent variabes in the two equations. (indepvars1 and indepvars2 can be the same, or different)
