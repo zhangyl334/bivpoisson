@@ -22,32 +22,10 @@ bivpoisson is a user-written command that fits a count valued seemingly unrelate
 ### Syntax
 
 ```
-bivpoisson depvar1 [=] [indepvars1] [if] [in] [weight], equation2(depvar2 [=] [indepvars2] [, enopts])  [options]
+bivpoisson (depvar1 = indepvars1) (depvar2 = indepvars2) [if] 
 ```
 where depvar1 is the first count valued outcome variable, indepvars1 are the independent variables of the firs outcome equation, depvar2 is the second count valued outcome variable, and indepvars2 are the independent variables of the second equation. Independent variables may contain a binary policy variable and a set of control variables and may be different or the same. bivpoisson is limited to a count valued seemingly unrelated regression model with two equations and provides a postestimation commands in estimating the average treatment effects (ATEs).
 
-### Options 
-
-```
-options                       Description
------------------------------------------------------------------------------------------------------------
-Model
-  noconstant                  suppress constant term
-  offset(varname)             offset variable for first equation
-
-Maximization
-  maximize_options            control the maximization process; seldom used
-
-  coeflegend                  display legend instead of statistics
------------------------------------------------------------------------------------------------------------
-
-enopts                        Description
------------------------------------------------------------------------------------------------------------
-Model
-  noconstant                  suppress constant term
-  offset(varname)             offset variable for second equation
------------------------------------------------------------------------------------------------------------
-```
 
 ### Example
 
@@ -140,12 +118,14 @@ command to run if program contains helper info
 ```
 
 ## Authors
-
-Abbie Zhang 
-yz97@iu.edu
+James C.D. Fisher
+jamescdf@gmail.com 
 
 Joseph V. Terza
 jvterza@iupui.edu
+
+Abbie Zhang 
+zhangyl334@gmail.com
 
 ## Version History
 
