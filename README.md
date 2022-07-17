@@ -109,13 +109,7 @@ sigma12              |
                _cons |   .5386813   .0414199    13.01   0.000     .4574997    .6198628
 --------------------------------------------------------------------------------------
 
-```
-## Help
 
-Any advise for common problems or issues.
-```
-command to run if program contains helper info
-```
 
 ## Authors
 James C.D. Fisher
