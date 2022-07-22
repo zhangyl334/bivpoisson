@@ -1,9 +1,8 @@
 # bivpoisson
-Count Valued Seemingly Unrelated Regression 
+Seemingly unrelated count regression
 
 ## Description
-
-Stata module to estimate bivariate poisson regressions
+bivpoisson implements the count-valued seemingly unrelated regression (count SUR) estimator proposed in Terza and Zhang (2021). This paper shows that bivpoisson affords greater precision and accuracy than Linear Seemingly Unrelated Regression (stata package: sureg) when the underlying data are correlated and count-valued; see Terza and Zhang (2021, https://doi.org/10.7912/C2/2873) for details and illustrations. Post-Estimation command (in development) associated with this package will support predictions and causal effects parameter estimation (i.e., Average Treatment Effects).
 
 ## Getting Started
 
@@ -26,8 +25,97 @@ bivpoisson (depvar1 = indepvars1) (depvar2 = indepvars2) [if]
 ```
 where depvar1 is the first count valued outcome variable, indepvars1 are the independent variables of the firs outcome equation, depvar2 is the second count valued outcome variable, and indepvars2 are the independent variables of the second equation. Independent variables may contain a binary policy variable and a set of control variables and may be different or the same. bivpoisson is limited to a count valued seemingly unrelated regression model with two equations and provides a postestimation commands in estimating the average treatment effects (ATEs).
 
+### Example 1
 
-### Example
+Set up
+```
+use "https://github.com/zhangyl334/bivpoisson/raw/main/Health_Data.dta", clear
+
+```
+
+Estimation of a seemingly unrelated count regression model
+```
+bivpoisson (ofp = privins black numchron) (ofnp = privins black numchron age) if fivepct_sample == 1
+
+. bivpoisson (ofp = privins black numchron) (ofnp = privins black numchron age) if fivepct_sample == 1
+initial:       f(p) = -898.14156
+rescale:       f(p) = -898.14156
+rescale eq:    f(p) = -889.97635
+Iteration 0:   f(p) = -889.97635  (not concave)
+Iteration 1:   f(p) = -878.49262  (not concave)
+Iteration 2:   f(p) = -845.96974  (not concave)
+Iteration 3:   f(p) = -840.21573  
+Iteration 4:   f(p) = -832.94616  
+Iteration 5:   f(p) = -832.69668  
+Iteration 6:   f(p) = -832.69538  
+Iteration 7:   f(p) = -832.69538  
+
+                                                           Number of obs = 207
+
+------------------------------------------------------------------------------
+             | Coefficient  Std. err.      z    P>|z|     [95% conf. interval]
+-------------+----------------------------------------------------------------
+Y1           |
+          x1 |   .3997619   .1830324     2.18   0.029     .0410251    .7584988
+          x2 |  -.1335776   .1905022    -0.70   0.483     -.506955    .2397997
+          x3 |   .2380122    .053071     4.48   0.000      .133995    .3420294
+          x4 |   .6682984   .1939622     3.45   0.001     .2881394    1.048457
+-------------+----------------------------------------------------------------
+Y2           |
+          x1 |   1.305625   .4458126     2.93   0.003     .4318483    2.179402
+          x2 |  -2.151162   .9190452    -2.34   0.019    -3.952457   -.3498661
+          x3 |   .2358258   .1392374     1.69   0.090    -.0370744     .508726
+          x4 |  -.0809187   .3125795    -0.26   0.796    -.6935632    .5317257
+          x5 |  -2.271814   2.292566    -0.99   0.322     -6.76516    2.221532
+-------------+----------------------------------------------------------------
+sigmasq1     |
+       _cons |   .8514478    .130599     6.52   0.000     .5954785    1.107417
+-------------+----------------------------------------------------------------
+sigmasq2     |
+       _cons |   3.478548   .6043013     5.76   0.000     2.294139    4.662956
+-------------+----------------------------------------------------------------
+sigma12      |
+       _cons |   .4178385   .2111368     1.98   0.048      .004018     .831659
+------------------------------------------------------------------------------
+
+. ereturn list
+
+scalars:
+               e(rank) =  12
+                  e(N) =  207
+                 e(ic) =  7
+                  e(k) =  12
+               e(k_eq) =  5
+               e(k_dv) =  2
+          e(converged) =  1
+                 e(rc) =  0
+
+macros:
+        e(ifstatement) : " if fivepct_sample == 1"
+             e(indep2) : "privins black numchron age"
+            e(depvar2) : "ofnp"
+             e(indep1) : "privins black numchron"
+            e(depvar1) : "ofp"
+              e(title) : "Bivariate Count Seemingly Unrelated Regression Estimation"
+                e(cmd) : "bivpoisson"
+                e(opt) : "moptimize"
+            e(predict) : "ml_p"
+               e(user) : "BivPoissNormLF()"
+          e(ml_method) : "lf0"
+          e(technique) : "nr"
+              e(which) : "max"
+             e(depvar) : "Y1 Y2"
+         e(properties) : "b V"
+
+matrices:
+                  e(b) :  1 x 12
+                  e(V) :  12 x 12
+               e(ilog) :  1 x 20
+           e(gradient) :  1 x 12
+
+
+
+### Example 2
 
 Set up
 ```
@@ -118,7 +206,7 @@ jamescdf@gmail.com
 Joseph V. Terza
 jvterza@iupui.edu
 
-Abbie Zhang 
+Abbie Yilei Zhang 
 zhangyl334@gmail.com
 
 ## Version History
