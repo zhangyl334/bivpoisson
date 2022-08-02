@@ -2,7 +2,7 @@ bivpoisson: Stata command to estimate seemingly unrelated count data (bivariate 
 James Fisher (jamescdf@gmail.com), Joseph Terza (jvterza@iupui.edu) and Abbie Yilei Zhang (zhangyl334@gmail.com)
 
 
-Abstract: bivpoisson implements the count-valued seemingly unrelated regression (count SUR) estimator proposed in Terza and Zhang (2021). This paper shows that bivpoisson affords greater precision and accuracy than Linear Seemingly Unrelated Regression (stata package: sureg) when the underlying data are correlated and count-valued; see Terza and Zhang (2021, https://doi.org/10.7912/C2/2873) for details and illustrations. Post-Estimation command (in development) associated with this package will support predictions and causal effects parameter estimation (i.e., Average Treatment Effects).
+Abstract: bivpoisson implements the count-valued seemingly unrelated regression (count SUR) estimator proposed in Terza and Zhang (2021). This paper shows that bivpoisson affords greater precision and accuracy than Linear Seemingly Unrelated Regression (stata package: sureg) when the underlying data are correlated and count-valued; see Terza and Zhang (2021, https://doi.org/10.7912/C2/2873) for details and illustrations. The post-estimation command (in development) associated with this package will support predictions and causal effects parameter estimation (i.e., Average Treatment Effects).
 
 Language: Stata
 Requires: Stata version 17

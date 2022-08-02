@@ -22,7 +22,7 @@ Our two count correlated outcomes are:
 
 Covariates consist of a constant and all patient characteristics. 
 The variable names are: exclhlth poorhlth numchron adldiff noreast midwest west age black male married school faminc employed medicaid
-They represents: whether has excellent health, whether has poor health, number of chronic conditions, whether has daily activity difficulties, region indicator (northeast), region indicator (midwest), region indicator (west), age, black, male, whether is married, years of school attended, family income, employement status, Australia Medicaid Status
+They represents: whether has excellent health, whether has poor health, number of chronic conditions, whether has daily activity difficulties, region indicator (northeast), region indicator (midwest), region indicator (west), age, black, male, whether is married, years of school attended, family income, employment status, Australia Medicaid Status
 
 Policy variable is an indicator variable (variable name: privins) of a whether a patient has private health insurance.
 
