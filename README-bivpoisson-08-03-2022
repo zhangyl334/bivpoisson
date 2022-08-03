@@ -7,7 +7,5 @@ Abstract: bivpoisson implements the count-valued seemingly unrelated regression 
 Language: Stata
 Requires: Stata version 17
 Keywords: correlated count data; bivariate Poisson; seemingly unrelated regression, causal inference
-Date: 2022-07-21
+Date: 2022-08-03
 Note: This module should be installed from within Stata by typing "ssc install bivpoisson". The module is made available under terms of the MIT License (https://github.com/zhangyl334/bivpoisson/blob/main/LICENSE). Windows users should not attempt to download these files with a web browser.
-
-d Distribution-Date: 20220803

@@ -209,7 +209,7 @@ end
 
 /*Mata Programs*/
 	/*Quadrature Weights and Abscissa*/
-	/*This program is due to Adrian Mander (mandera@cardiff.ac.uk)*/
+	/*This mata program is due to Adrian Mander (mandera@cardiff.ac.uk)*/
 	capture mata: mata drop GLQwtsandabs()
 	mata 
 	matrix GLQwtsandabs(real scalar quadpts)
